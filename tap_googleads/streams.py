@@ -285,7 +285,7 @@ class AdsStream(ReportsStream):
 
     records_jsonpath = "$.results[*]"
     name = "ads"
-    primary_keys_jsonpaths = ["ad_group_ad.ad.id"]
+    primary_keys_jsonpaths = ["adGroupAd.ad.id"]
     primary_keys = ["_sdc_primary_key"]
     replication_key = None
     schema_filepath = SCHEMAS_DIR / "ads.json"
