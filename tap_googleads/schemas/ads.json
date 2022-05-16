@@ -6,7 +6,7 @@
         "_sdc_primary_key": {
             "type": "string"
         },
-        "ad_group_ad": {
+        "adGroupAd": {
             "type": "object",
             "properties": {
                 "ad": {
