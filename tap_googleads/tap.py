@@ -9,6 +9,7 @@ from datetime import date, timedelta
 from tap_googleads.streams import (
     CustomerStream,
     CampaignsStream,
+    AdsStream,
     AdsPerformance,
     AdGroupsStream,
     AdGroupsPerformance,
@@ -26,6 +27,7 @@ from tap_googleads.streams import (
 STREAM_TYPES = [
     CustomerStream,
     CampaignsStream,
+    AdsStream,
     AdGroupsStream,
     AdGroupsPerformance,
     AdsPerformance,
