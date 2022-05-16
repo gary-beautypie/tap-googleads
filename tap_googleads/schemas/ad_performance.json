@@ -26,8 +26,13 @@
         "adGroupAd": {
             "type": "object",
             "properties": {
-                "id": {
-                    "type": "string"
+                "ad": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "string"
+                        }
+                    }
                 }
             }
         },
