@@ -125,6 +125,7 @@ class CustomerHierarchyStream(GoogleAdsStream):
 
         for client in client_ids:
             client_id = client.split("/")[-1]
+            context = context or {}
             context["client_id"] = client_id
             for row in self.request_records(context):
                 row = self.post_process(row, context)
