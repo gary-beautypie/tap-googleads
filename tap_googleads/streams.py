@@ -101,6 +101,7 @@ class CustomerHierarchyStream(GoogleAdsStream):
                 th.Property("id", th.StringType),
             ),
         ),
+	th.Property("client_id", th.StringType),
         th.Property("_sdc_primary_key", th.StringType),
     ).to_dict()
 
