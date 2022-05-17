@@ -9,6 +9,9 @@
                 },
                 "id": {
                     "type": "string"
+                },
+                "name": {
+                    "type": "string"
                 }
             }
         },
@@ -20,6 +23,9 @@
                 },
                 "id": {
                     "type": "string"
+                },
+                "name": {
+                    "type": "string"
                 }
             }
         },
@@ -30,6 +36,9 @@
                     "type": "object",
                     "properties": {
                         "id": {
+                            "type": "string"
+                        },
+                        "name": {
                             "type": "string"
                         }
                     }
@@ -54,6 +63,32 @@
             "type": "object",
             "properties": {
                 "date": {
+                    "type": "string"
+                },
+                "ad_network_type": {
+                    "type": "string"
+                },
+                "device": {
+                    "type": "string"
+                }
+            }
+        },
+        "customer": {
+            "type": "object",
+            "properties": {
+                "resourceName": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "descriptive_name": {
+                    "type": "string"
+                },
+                "time_zone": {
+                    "type": "string"
+                },
+                "currency_code": {
                     "type": "string"
                 }
             }

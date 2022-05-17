@@ -301,12 +301,21 @@ class AdsPerformance(ReportsStream):
     def gaql(self) -> str:
         return f"""
         SELECT campaign.id
+             , campaign.name
              , ad_group.id
-	     , ad_group_ad.ad.id
+             , ad_group.name
+	         , ad_group_ad.ad.id
+	         , ad_group_ad.ad.name
              , metrics.impressions
              , metrics.clicks
              , metrics.cost_micros
              , segments.date
+             , segments.ad_network_type
+             , segments.device
+             , customer.id
+             , customer.descriptive_name
+             , customer.time_zone
+             , customer.currency_code
         FROM ad_group_ad
         WHERE segments.date {self.between_filter}
         """
