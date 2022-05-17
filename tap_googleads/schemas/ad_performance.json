@@ -65,7 +65,7 @@
                 "date": {
                     "type": "string"
                 },
-                "ad_network_type": {
+                "adNetworkType": {
                     "type": "string"
                 },
                 "device": {
@@ -82,13 +82,13 @@
                 "id": {
                     "type": "string"
                 },
-                "descriptive_name": {
+                "descriptiveName": {
                     "type": "string"
                 },
-                "time_zone": {
+                "timeZone": {
                     "type": "string"
                 },
-                "currency_code": {
+                "currencyCode": {
                     "type": "string"
                 }
             }

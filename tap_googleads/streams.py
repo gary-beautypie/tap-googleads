@@ -322,7 +322,7 @@ class AdsPerformance(ReportsStream):
 
     records_jsonpath = "$.results[*]"
     name = "ad_performance"
-    primary_keys_jsonpaths = ["campaign.resourceName", "adGroupAd.ad.id", "segments.date", "segments.ad_network_type", "segments.device"]
+    primary_keys_jsonpaths = ["campaign.resourceName", "adGroupAd.ad.id", "segments.date", "segments.adNetworkType", "segments.device"]
     primary_keys = ["_sdc_primary_key"]
     replication_key = None
     schema_filepath = SCHEMAS_DIR / "ad_performance.json"
