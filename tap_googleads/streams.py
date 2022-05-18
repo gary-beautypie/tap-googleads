@@ -84,7 +84,7 @@ class CustomerHierarchyStream(GoogleAdsStream):
     name = "customer_hierarchy"
     primary_keys_jsonpaths = ["customerClient.id"]
     primary_keys = ["_sdc_primary_key"]
-    state_partition_keys = ["client_id"]
+    state_partitioning_keys = ["client_id"]
     replication_key = None
     parent_stream_type = AccessibleCustomers
     schema = th.PropertiesList(
