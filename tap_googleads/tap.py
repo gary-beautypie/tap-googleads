@@ -7,7 +7,6 @@ from singer_sdk import typing as th  # JSON schema typing helpers
 from datetime import date, timedelta
 
 from tap_googleads.streams import (
-    CustomerStream,
     CampaignsStream,
     AdsStream,
     AdsPerformance,
@@ -25,7 +24,6 @@ from tap_googleads.streams import (
 )
 
 STREAM_TYPES = [
-    CustomerStream,
     CampaignsStream,
     AdsStream,
     AdGroupsStream,
