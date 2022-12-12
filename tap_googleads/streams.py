@@ -319,6 +319,30 @@ class AdsPerformance(ReportsStream):
     schema_filepath = SCHEMAS_DIR / "ad_performance.json"
 
 
+class AdsConversionsByAction(ReportsStream):
+    """Ads Conversions by Action"""
+
+    @property
+    def gaql(self) -> str:
+        return f"""
+        SELECT ad_group_ad.ad.id
+             , segments.date
+             , segments.conversion_action_category
+             , segments.conversion_action
+             , segments.conversion_action_name
+             , metrics.conversions
+        FROM ad_group_ad 
+        WHERE segments.date {self.between_filter}
+        """
+
+    records_jsonpath = "$.results[*]"
+    name = "ad_conversions_by_action"
+    primary_keys_jsonpaths = ["adGroupAd.ad.id", "segments.date", "segments.conversionActionCategory", "segments.conversionAction", "segments.conversionActionName"]
+    primary_keys = ["_sdc_primary_key"]
+    replication_key = None
+    schema_filepath = SCHEMAS_DIR / "ad_conversions_by_action.json"
+
+
 class AdGroupsPerformance(ReportsStream):
     """AdGroups Performance"""
 

@@ -1,0 +1,46 @@
+{
+    "type": "object",
+    "properties": {
+        "adGroupAd": {
+            "type": "object",
+            "properties": {
+                "ad": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "metrics": {
+            "type": "object",
+            "properties": {
+                "conversions": {
+                    "type": "string"
+                }
+            }
+        },
+        "segments": {
+            "type": "object",
+            "properties": {
+                "date": {
+                    "type": "string"
+                },
+                "conversionActionCategory": {
+                    "type": "string"
+                },
+                "conversionAction": {
+                    "type": "string"
+                },
+                "conversionActionName": {
+                    "type": "string"
+                }
+            }
+        },
+        "_sdc_primary_key": {
+            "type": "string"
+        }
+    }
+}
