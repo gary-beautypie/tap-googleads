@@ -4,6 +4,14 @@
         "_sdc_primary_key": {
             "type": "string"
         },
+        "adGroup": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                }
+            }
+        },
         "adGroupAd": {
             "type": "object",
             "properties": {
@@ -20,6 +28,14 @@
                           "type": "string"
                       }
                   }
+                }
+            }
+        },
+        "campaign": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
                 }
             }
         }

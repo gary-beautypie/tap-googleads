@@ -273,6 +273,8 @@ class AdsStream(ReportsStream):
         return """
             SELECT ad_group_ad.ad.id
                  , ad_group_ad.ad.name
+                 , ad_group.id
+                 , campaign.id
             FROM ad_group_ad 
             ORDER BY ad_group_ad.ad.id
         """
@@ -331,6 +333,11 @@ class AdsConversionsByAction(ReportsStream):
              , segments.conversion_action
              , segments.conversion_action_name
              , metrics.conversions
+             , metrics.conversions_value
+             , metrics.all_conversions
+             , metrics.all_conversions_value
+             , metrics.current_model_attributed_conversions
+             , metrics.current_model_attributed_conversions_value
         FROM ad_group_ad 
         WHERE segments.date {self.between_filter}
         """

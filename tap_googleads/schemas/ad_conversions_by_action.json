@@ -19,6 +19,21 @@
             "properties": {
                 "conversions": {
                     "type": "string"
+                },
+                "conversions_value": {
+                    "type": "string"
+                },
+                "all_conversions": {
+                    "type": "string"
+                },
+                "all_conversions_value": {
+                    "type": "string"
+                },
+                "current_model_attributed_conversions": {
+                    "type": "string"
+                },
+                "current_model_attributed_conversions_value": {
+                    "type": "string"
                 }
             }
         },
