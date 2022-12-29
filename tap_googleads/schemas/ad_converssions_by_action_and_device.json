@@ -1,0 +1,64 @@
+{
+    "type": "object",
+    "properties": {
+        "adGroupAd": {
+            "type": "object",
+            "properties": {
+                "ad": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "metrics": {
+            "type": "object",
+            "properties": {
+                "conversions": {
+                    "type": "string"
+                },
+                "conversions_value": {
+                    "type": "string"
+                },
+                "all_conversions": {
+                    "type": "string"
+                },
+                "all_conversions_value": {
+                    "type": "string"
+                },
+                "current_model_attributed_conversions": {
+                    "type": "string"
+                },
+                "current_model_attributed_conversions_value": {
+                    "type": "string"
+                }
+            }
+        },
+        "segments": {
+            "type": "object",
+            "properties": {
+                "date": {
+                    "type": "string"
+                },
+                "conversionActionCategory": {
+                    "type": "string"
+                },
+                "conversionAction": {
+                    "type": "string"
+                },
+                "conversionActionName": {
+                    "type": "string"
+                },
+                "device": {
+                    "type": "string"
+                }
+            }
+        },
+        "_sdc_primary_key": {
+            "type": "string"
+        }
+    }
+}
