@@ -534,7 +534,7 @@ class CampaignPerformanceByActionAndDevice(ReportsStream):
                  , metrics.average_cpc
                  , metrics.cost_micros
                  , campaign.advertising_channel_type 
-            FROM gender_view 
+            FROM campaign 
             WHERE segments.date {self.between_filter}
         """
 
