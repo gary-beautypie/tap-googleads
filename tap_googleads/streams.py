@@ -512,6 +512,46 @@ class CampaignPerformanceByGenderAndDevice(ReportsStream):
     schema_filepath = SCHEMAS_DIR / "campaign_performance_by_gender_and_device.json"
 
 
+class CampaignPerformanceByActionAndDevice(ReportsStream):
+    """Campaign Performance By Action and Device"""
+
+    @property
+    def gaql(self) -> str:
+        return f"""
+            SELECT campaign.name
+                 , campaign.status
+                 , campaign.id
+                 , ad_group.name
+                 , ad_group.id
+                 , segments.date
+                 , segments.device
+                 , segments.conversion_action_name
+                 , ad_group_criterion.system_serving_status
+                 , ad_group_criterion.bid_modifier
+                 , metrics.clicks
+                 , metrics.impressions
+                 , metrics.ctr
+                 , metrics.average_cpc
+                 , metrics.cost_micros
+                 , campaign.advertising_channel_type 
+            FROM gender_view 
+            WHERE segments.date {self.between_filter}
+        """
+
+    records_jsonpath = "$.results[*]"
+    name = "campaign_performance_by_action_and_device"
+    primary_keys_jsonpaths = [
+        "campaign.resourceName",
+        "adGroup.id",
+        "segments.conversionActionName",
+        "segments.device",
+        "segments.date",
+    ]
+    primary_keys = ["_sdc_primary_key"]
+    replication_key = None
+    schema_filepath = SCHEMAS_DIR / "campaign_performance_by_action_and_device.json"
+
+
 class CampaignPerformanceByLocation(ReportsStream):
     """Campaign Performance By Age Range and Device"""
 
