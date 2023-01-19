@@ -538,8 +538,7 @@ class CampaignConversionsByActionAndDevice(ReportsStream):
     records_jsonpath = "$.results[*]"
     name = "campaign_conversions_by_action_and_device"
     primary_keys_jsonpaths = [
-        "campaign.resourceName",
-        "adGroup.id",
+        "campaign.id",
         "segments.conversionActionName",
         "segments.device",
         "segments.date",
