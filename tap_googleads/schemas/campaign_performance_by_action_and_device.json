@@ -21,17 +21,6 @@
                 }
             }
         },
-        "adGroup": {
-            "type": "object",
-            "properties": {
-                "resourceName": {
-                    "type": "string"
-                },
-                "name": {
-                    "type": "string"
-                }
-            }
-        },
         "metrics": {
             "type": "object",
             "properties": {
