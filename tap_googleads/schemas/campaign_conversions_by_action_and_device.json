@@ -24,19 +24,22 @@
         "metrics": {
             "type": "object",
             "properties": {
-                "clicks": {
+                "conversions": {
                     "type": "string"
                 },
-                "costMicros": {
+                "conversions_value": {
                     "type": "string"
                 },
-                "ctr": {
-                    "type": "number"
+                "all_conversions": {
+                    "type": "string"
                 },
-                "averageCpc": {
-                    "type": "number"
+                "all_conversions_value": {
+                    "type": "string"
                 },
-                "impressions": {
+                "current_model_attributed_conversions": {
+                    "type": "string"
+                },
+                "current_model_attributed_conversions_value": {
                     "type": "string"
                 }
             }
