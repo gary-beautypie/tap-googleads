@@ -521,19 +521,15 @@ class CampaignPerformanceByActionAndDevice(ReportsStream):
             SELECT campaign.name
                  , campaign.status
                  , campaign.id
-                 , ad_group.name
-                 , ad_group.id
+                 , campaign.advertising_channel_type 
                  , segments.date
                  , segments.device
                  , segments.conversion_action_name
-                 , ad_group_criterion.system_serving_status
-                 , ad_group_criterion.bid_modifier
                  , metrics.clicks
                  , metrics.impressions
                  , metrics.ctr
                  , metrics.average_cpc
                  , metrics.cost_micros
-                 , campaign.advertising_channel_type 
             FROM campaign 
             WHERE segments.date {self.between_filter}
         """
