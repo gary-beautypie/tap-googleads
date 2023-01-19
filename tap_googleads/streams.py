@@ -512,8 +512,8 @@ class CampaignPerformanceByGenderAndDevice(ReportsStream):
     schema_filepath = SCHEMAS_DIR / "campaign_performance_by_gender_and_device.json"
 
 
-class CampaignPerformanceByActionAndDevice(ReportsStream):
-    """Campaign Performance By Action and Device"""
+class CampaignConversionsByActionAndDevice(ReportsStream):
+    """Campaign Conversions By Action and Device"""
 
     @property
     def gaql(self) -> str:
@@ -525,17 +525,18 @@ class CampaignPerformanceByActionAndDevice(ReportsStream):
                  , segments.date
                  , segments.device
                  , segments.conversion_action_name
-                 , metrics.clicks
-                 , metrics.impressions
-                 , metrics.ctr
-                 , metrics.average_cpc
-                 , metrics.cost_micros
+                 , metrics.conversions
+                 , metrics.conversions_value
+                 , metrics.all_conversions
+                 , metrics.all_conversions_value
+                 , metrics.current_model_attributed_conversions
+                 , metrics.current_model_attributed_conversions_value
             FROM campaign 
             WHERE segments.date {self.between_filter}
         """
 
     records_jsonpath = "$.results[*]"
-    name = "campaign_performance_by_action_and_device"
+    name = "campaign_conversions_by_action_and_device"
     primary_keys_jsonpaths = [
         "campaign.resourceName",
         "adGroup.id",
@@ -545,7 +546,7 @@ class CampaignPerformanceByActionAndDevice(ReportsStream):
     ]
     primary_keys = ["_sdc_primary_key"]
     replication_key = None
-    schema_filepath = SCHEMAS_DIR / "campaign_performance_by_action_and_device.json"
+    schema_filepath = SCHEMAS_DIR / "campaign_conversions_by_action_and_device.json"
 
 
 class CampaignPerformanceByLocation(ReportsStream):
